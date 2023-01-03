@@ -1,0 +1,62 @@
+name: Easycmds
+version: '${project.version}'
+main: me.louiletsplaypro.easycmds.Easycmds
+api-version: 1.19
+authors: [ LouiletsPlayPro ]
+
+commands:
+  gm0:
+    description: Setzte dich in den Gamemode Survival
+    permission: easycmds.gm0
+  gm1:
+    description: Setzte dich in den Gamemode Creative
+    permission: easycmds.gm1
+  gm2:
+    description: Setzte dich in den Gamemode Adventure
+    permission: easycmds.gm2
+  gm3:
+    description: Setzte dich in den Gamemode Specktator
+    permission: easycmds.gm3
+  gm:
+    description: Setzte dich in den Gamemode Survival
+    permission: easycmds.gm
+  invsee:
+    description: Schau in das Inventar eines Spielers
+    permission: easycmds.invsee.use
+  snowball:
+    aliases:
+      - sb
+    description: Toggle Schneeball System
+    permission: easycmds.snowball
+  gui:
+    aliases:
+      - g
+    description: Öffne die GUI
+    permission: easycmds.gui
+
+permissions:
+  easycmds.*:
+    description: Erlaubt alle Berechtigungen die für dieses Plugin benötigt sind
+    default: op
+    children:
+      easycmds.gm: true
+      easycmds.invsee.view: true
+      easycmds.snowball: true
+      easycmds.gui: true
+
+  easycmds.gm:
+    description: Alle Gamemode rechte
+    default: false
+    children:
+      easycmds.gm0: true
+      easycmds.gm1: true
+      easycmds.gm2: true
+      easycmds.gm3: true
+
+  easycmds.invsee.use:
+    description: Berechtigung für /invsee
+    default: op
+
+  easycmds.invsee.edit:
+    description: Hinzufügen / Entfernen von Items aus Inventaren
+    default: op
